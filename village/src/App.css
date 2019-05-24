@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
 img {
@@ -22,4 +23,13 @@ img {
   margin: 10px;
   border-radius: 2rem;
   background: lightgray;
+}
+
+.Smurf {
+  width: 85%;
+  border: solid 2px rgb(0, 136, 255);
+  margin: 25px;
+  border-radius: 2rem;
+  background: lightgray;
+  
 }
