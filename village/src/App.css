@@ -1,3 +1,25 @@
 .App {
   text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+img {
+  border-radius: 3rem;
+  padding: 25px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link p {
+  padding: 5px 45px;
+  color: red;
+  font-size: 1.5rem;
+  border: solid 2px rgb(0, 136, 255);
+  width: 250px;
+  margin: 10px;
+  border-radius: 2rem;
+  background: lightgray;
 }
