@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
 import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
+import Navigation from './components/Navigation';
+
 import axios from 'axios';
 
 class App extends Component {
@@ -14,9 +17,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios 
-      .get ('http://localhost:3333/smurfs')
-      .then (response => {
+    axios
+      .get('http://localhost:3333/smurfs')
+      .then(response => {
         console.log(response);
         this.setState(({ smurfs: response.data }));
       })
@@ -31,8 +34,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SmurfForm />
-        <Smurfs smurfs={this.state.smurfs} />
+
+        <Route path="/" component={Navigation} />
+
+        <Route exact path="/"
+          render={props => (
+            <Smurfs {...props} smurfs={this.state.smurfs} />
+          )} />
+
+        <Route
+          path="/smurf-form"
+          render={props => (
+            <SmurfForm {...props} addSmurf={this.addSmurf} />
+          )} />
+
       </div>
     );
   }
